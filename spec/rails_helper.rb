@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+end
+
 ENV['RAILS_ENV'] ||= 'test'
 
 ENGINE_ROOT = File.join(File.dirname(__FILE__), '../')

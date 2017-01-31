@@ -1,5 +1,10 @@
 # rspec-active_model_serializers
 
+[![Build Status](https://travis-ci.org/leonelgalan/rspec-active_model_serializers.svg?branch=master)](https://travis-ci.org/leonelgalan/rspec-active_model_serializers)
+[![Code Climate](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers/badges/gpa.svg)](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers)
+[![Test Coverage](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers/badges/coverage.svg)](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers/coverage)
+[![Issue Count](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers/badges/issue_count.svg)](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers)
+
 ## Installation
 
 Add `rspec-active_model_serializers` the `:development` group in the _Gemfile_:

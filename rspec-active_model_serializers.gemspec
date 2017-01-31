@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'railties', ['>= 4.1', '< 6']
   spec.add_development_dependency 'rspec', '~> 3.5'
   spec.add_development_dependency 'rspec-rails'
+  spec.add_development_dependency 'codeclimate-test-reporter', '>=1.0'
   spec.files = `git ls-files`.split("\n")
   spec.test_files = `git ls-files -- spec/*`.split("\n")
   spec.require_paths = ['lib']
