@@ -7,7 +7,7 @@
 
 ## Installation
 
-Add `rspec-active_model_serializers` the `:development` group in the _Gemfile_:
+Add **rspec-active_model_serializers** the `:test` group in the _Gemfile_:
 
 ```ruby
 group :test do
@@ -17,25 +17,40 @@ end
 
 ## Usage
 
-**rspec-active_model_serializers** provides a `have_valid_schema` matcher to be
-used on your controller/request specs to validate the response against a [JSON
-Schema](http://json-schema.org/). Let's look at the equivalent setup for the
-example above.
+### `have_valid_schema`
+
+Validates the request or response against a [JSON
+Schema](http://json-schema.org/). You can customize which schema to use by
+chaining `.at_path(path_to_schema)`.
+
+```ruby
+# spec/rails_helper.rb
+ActiveModelSerializers.config.schema_path = 'spec/support/schemas'
+```
 
 ```ruby
 # spec/controller/posts_controller_spec.rb
 Rspec.describe PostsController do
-  describe 'index' do
-    it 'should render right response' do
+  context 'GET /index' do
+    it 'responds with a valid schema' do
       get :index
       expect(response).to have_valid_schema
+    end
+  end
+
+  context 'GET /show' do
+    it 'responds with a valid schema' do
+      get :show, id: 1
+      expect(response).to have_valid_schema.at_path('custom/show.json')
     end
   end
 end
 ```
 
-Its usage is on par with `assert_response_schema`. See
-[ActiveModelSerializers::Test::Schema](https://github.com/rails-api/active_model_serializers/tree/master/lib/active_model_serializers/test/schema.rb)
-and
-[RSpec::ActiveModelSerializers::Matchers::HaveValidSchema](lib/rspec/active_model_serializers/matchers/have_valid_schema.rb)
-for more examples and documentation.
+`expect(response_or_request).to have_valid_schema.at_path(path_to_schema)` can
+be understood as being a translation of both
+`assert_response_schema(path_to_schema)` and
+`assert_request_schema(path_to_schema)`. See
+[ActiveModelSerializers::Test::Schema](../../lib/active_model_serializers/test/schema.rb)
+and [ActiveModelSerializers::RSpecMatchers::Schema](../../lib/active_model_serializers/rspec_matchers/schema.rb)
+for additional documentation.
