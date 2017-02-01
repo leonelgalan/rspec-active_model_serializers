@@ -4,8 +4,7 @@ Gemfile.lock
 coverage
 doc
 
-*.log
-
 .ruby-version
 
+spec/dummy/log
 spec/examples.txt

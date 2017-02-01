@@ -18,10 +18,4 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'rspec/active_model_serializers'
 
-# Load RSpec helpers.
-Dir[File.join(ENGINE_ROOT, 'spec/support/**/*.rb')].each { |f| require f }
-
-RSpec.configure do |config|
-  config.disable_monkey_patching!
-  config.infer_spec_type_from_file_location!
-end
+ActiveModelSerializers.config.schema_path = 'spec/support/schemas'
