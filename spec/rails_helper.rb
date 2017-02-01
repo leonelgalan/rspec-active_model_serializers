@@ -16,7 +16,7 @@ abort('Rails is running in production!') if Rails.env.production?
 
 require 'spec_helper'
 require 'rspec/rails'
-require 'rspec-active_model_serializers'
+require 'rspec/active_model_serializers'
 
 # Load RSpec helpers.
 Dir[File.join(ENGINE_ROOT, 'spec/support/**/*.rb')].each { |f| require f }
