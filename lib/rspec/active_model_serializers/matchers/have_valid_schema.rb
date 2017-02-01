@@ -19,10 +19,6 @@ module RSpec
             @matcher = AssertSchema.new(@schema_path, request, response, nil)
             @matcher.call
           end
-
-          failure_message do
-            @matcher.message
-          end
         end
       end
     end
