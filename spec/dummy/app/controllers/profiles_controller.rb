@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
   end
 
   def name_as_a_integer
-    @profile.name = 1
+    @profile.attributes[:name] = 1
     index
   end
 
