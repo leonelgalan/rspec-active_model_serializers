@@ -4,6 +4,8 @@
 [![Code Climate](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers/badges/gpa.svg)](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers)
 [![Test Coverage](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers/badges/coverage.svg)](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers/coverage)
 [![Issue Count](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers/badges/issue_count.svg)](https://codeclimate.com/github/leonelgalan/rspec-active_model_serializers)
+[![Dependency Status](https://gemnasium.com/badges/github.com/leonelgalan/rspec-active_model_serializers.svg)](https://gemnasium.com/github.com/leonelgalan/rspec-active_model_serializers)
+[![Gem](https://img.shields.io/gem/v/rspec-active_model_serializers.svg)](https://rubygems.org/gems/rspec-active_model_serializers)
 
 ## Installation
 
@@ -34,6 +36,7 @@ Rspec.describe PostsController do
   context 'GET /index' do
     it 'responds with a valid schema' do
       get :index
+      # Schema: spec/support/schemas/posts/index.json
       expect(response).to have_valid_schema
     end
   end
@@ -41,6 +44,7 @@ Rspec.describe PostsController do
   context 'GET /show' do
     it 'responds with a valid schema' do
       get :show, id: 1
+      # Schema: spec/support/schemas/custom/show.json
       expect(response).to have_valid_schema.at_path('custom/show.json')
     end
   end
@@ -52,5 +56,5 @@ be understood as being a translation of both
 `assert_response_schema(path_to_schema)` and
 `assert_request_schema(path_to_schema)`. See
 [ActiveModelSerializers::Test::Schema](../../lib/active_model_serializers/test/schema.rb)
-and [ActiveModelSerializers::RSpecMatchers::Schema](../../lib/active_model_serializers/rspec_matchers/schema.rb)
+and [RSpec::ActiveModelSerializers::Matchers::HaveValidSchema](../../lib/rspec/active_model_serializers/matchers/have_valid_schema.rb)
 for additional documentation.
