@@ -56,5 +56,5 @@ be understood as being a translation of both
 `assert_response_schema(path_to_schema)` and
 `assert_request_schema(path_to_schema)`. See
 [ActiveModelSerializers::Test::Schema](../../lib/active_model_serializers/test/schema.rb)
-and [RSpec::ActiveModelSerializers::Matchers::HaveValidSchema](../../lib/rspec/active_model_serializers/matchers/have_valid_schema.rb)
+and [RSpec::ActiveModelSerializers::Matchers::HaveValidSchema](lib/rspec/active_model_serializers/matchers/have_valid_schema.rb)
 for additional documentation.
