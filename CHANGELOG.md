@@ -1,6 +1,6 @@
 # Change Log
 
-## 1.0.0.pre
+## 1.0.0
 
 - Adds `:have_valid_schema` RSpec matcher by
   [@leonelgalan](https://github.com/leonelgalan). Discussed and reviewed on
