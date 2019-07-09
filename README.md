@@ -55,6 +55,6 @@ end
 be understood as being a translation of both
 `assert_response_schema(path_to_schema)` and
 `assert_request_schema(path_to_schema)`. See
-[ActiveModelSerializers::Test::Schema](https://github.com/rails-api/active_model_serializers/blob/master/lib/active_model_serializers/test/schema.rb)
+[ActiveModelSerializers::Test::Schema](https://github.com/rails-api/active_model_serializers/blob/v0.10.9/lib/active_model_serializers/test/schema.rb)
 and [RSpec::ActiveModelSerializers::Matchers::HaveValidSchema](lib/rspec/active_model_serializers/matchers/have_valid_schema.rb)
 for additional documentation.
